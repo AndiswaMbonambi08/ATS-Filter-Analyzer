@@ -20,7 +20,7 @@ A powerful web application that analyzes resumes and CVs against Applicant Track
 - **NLP**: spaCy, NLTK, scikit-learn
 - **File Parsing**: PyPDF2, python-docx
 - **Frontend**: Vanilla JavaScript with modern CSS
-- **Deployment**: Gunicorn, can be deployed to Heroku, AWS, or any VPS
+- **Deployment**: can be deployed to Heroku, AWS, or any VPS
 
 ## 📋 Requirements
 
@@ -225,21 +225,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///ats_analyzer.db'
 
 ## 🚢 Deployment
 
-### Heroku
-
-```bash
-# Create Procfile
-echo "web: gunicorn app:create_app()" > Procfile
-
-# Create runtime.txt
-echo "python-3.11.6" > runtime.txt
-
-# Deploy
-heroku create your-app-name
-git push heroku main
-heroku run python init_db.py
-```
-
 ### AWS/EC2
 
 ```bash
@@ -370,10 +355,6 @@ Contributions welcome! Areas for improvement:
 - [ ] Advanced analytics dashboard
 - [ ] Cover letter analysis
 
-## 📄 License
-
-MIT License - feel free to use and modify
-
 ## 🎯 Future Roadmap
 
 - **v2.0**: AI-powered rewriting suggestions
@@ -396,34 +377,7 @@ If this tool helps you land your next job, please star on GitHub and share with 
 
 ---
 
-**Made with ❤️ to help candidates succeed**
-
-Last Updated: 2024
-
-# 📄 ATS Filter Analyzer
-
 **Status:** In Progress 🚧
 
-This project will analyze CVs and job applications against **Applicant Tracking System (ATS)** filters to help candidates optimize their chances of passing automated screenings.
-
----
-
-## 🌟 Vision
-To build a tool that scans resumes, highlights weak points, and suggests improvements based on ATS keyword matching and formatting rules.
-
----
-
-## 🔧 Planned Tech Stack
-- Python (data parsing, keyword analysis)
-- NLP libraries (spaCy, NLTK)
-- SQLite for storing job description data
-- Web interface (Flask/Django)
-
----
-
-## 🚀 Next Steps
-- Design input/output structure
-- Implement keyword extraction
-- Build scoring system
-- Add UI for resume upload
+## Screenshots
 
