@@ -1,0 +1,22 @@
+# Base dependencies
+-r requirements.txt
+
+# Development tools
+pytest==7.4.0
+pytest-cov==4.1.0
+black==23.7.0
+flake8==6.0.0
+pylint==2.17.5
+isort==5.12.0
+
+# Debugging
+flask-debugtoolbar==0.13.1
+ipython==8.12.2
+ipdb==0.13.13
+
+# Testing
+faker==19.2.0
+responses==0.23.1
+
+# Code quality
+pre-commit==3.3.3
