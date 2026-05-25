@@ -223,46 +223,6 @@ SCORE_THRESHOLD = 60  # Minimum passing score
 SQLALCHEMY_DATABASE_URI = 'sqlite:///ats_analyzer.db'
 ```
 
-## 🚢 Deployment
-
-### AWS/EC2
-
-```bash
-# Install dependencies
-sudo apt-get update
-sudo apt-get install python3-pip python3-venv
-
-# Clone and setup
-git clone <repo>
-cd ats-analyzer
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-
-# Run with Gunicorn
-gunicorn -w 4 -b 0.0.0.0:5000 app:create_app()
-```
-
-### Docker
-
-```dockerfile
-FROM python:3.11
-
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN python -m spacy download en_core_web_sm
-
-COPY . .
-
-ENV FLASK_APP=app.py
-RUN python init_db.py
-
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:create_app()"]
-```
-
 ## 📈 Analysis Tips
 
 ### For Better Scores
@@ -292,92 +252,17 @@ CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:create_app()"]
    - Skills (match job description)
    - Certifications/Awards (if relevant)
 
-### Red Flags for ATS
-
-- ❌ Tables or multi-column layouts
-- ❌ Images, graphics, logos
-- ❌ Unusual fonts (Comic Sans, Wingdings, etc.)
-- ❌ Header/footer information
-- ❌ Missing contact information
-- ❌ Too short (<150 words)
-- ❌ Too long (>1200 words)
-- ❌ PDF forms or fillable fields
-- ❌ Special Unicode characters
-
-## 🐛 Troubleshooting
-
-### PDF Parse Error
-```
-Error: "Could not parse PDF"
-```
-- Try converting PDF to DOCX in Word
-- Ensure PDF is not encrypted
-- Try text-based PDF (not image-based scan)
-
-### Database Error
-```
-Error: "database is locked"
-```
-- Restart the application
-- Check file permissions on `ats_analyzer.db`
-- Delete `ats_analyzer.db` and run `python init_db.py` again
-
-### Port Already in Use
-```
-Error: "Address already in use"
-```
-```bash
-# Use different port
-python app.py --port 5001
-
-# Or kill process on port 5000
-# Windows: netstat -ano | findstr :5000
-# Linux: lsof -i :5000 && kill -9 <PID>
-```
-
-## 📚 Learning Resources
-
-- [Flask Documentation](https://flask.palletsprojects.com/)
-- [SQLAlchemy ORM](https://docs.sqlalchemy.org/)
-- [spaCy NLP Library](https://spacy.io/)
-- [ATS Best Practices](https://www.indeed.com/resumes/)
-
-## 🤝 Contributing
-
-Contributions welcome! Areas for improvement:
-
-- [ ] Multi-language support
-- [ ] LinkedIn integration
-- [ ] Resume templates
-- [ ] AI-powered rewriting suggestions
-- [ ] Batch analysis
-- [ ] Export detailed reports (PDF)
-- [ ] Advanced analytics dashboard
-- [ ] Cover letter analysis
-
-## 🎯 Future Roadmap
-
-- **v2.0**: AI-powered rewriting suggestions
-- **v2.0**: Integration with job boards (LinkedIn, Indeed)
-- **v2.0**: Resume templates with ATS best practices
-- **v2.0**: Video interview preparation
-- **v3.0**: Company-specific ATS optimization
-- **v3.0**: Salary negotiation guide
-
-## 💬 Support
-
-For issues, questions, or suggestions:
-1. Check the Troubleshooting section
-2. Review sample analyses with `python init_db.py`
-3. Check Flask logs for detailed error messages
-
-## 🌟 Star on GitHub!
-
-If this tool helps you land your next job, please star on GitHub and share with others!
-
----
-
 **Status:** In Progress 🚧
 
 ## Screenshots
+<img width="1844" height="1024" alt="Screenshot_25-5-2026_182937_127 0 0 1" src="https://github.com/user-attachments/assets/67fad97d-a53c-4d82-a661-6ebcb903da1e" />
+
+<img width="1835" height="1024" alt="Screenshot_25-5-2026_18911_127 0 0 1" src="https://github.com/user-attachments/assets/6217f383-de07-4544-86b9-4c637b0b76ed" />
+
+<img width="1838" height="1024" alt="Screenshot_25-5-2026_18957_127 0 0 1" src="https://github.com/user-attachments/assets/3cfc5345-7d43-444b-a672-a06cd0a7fa22" />
+
+<img width="1836" height="1024" alt="Screenshot_25-5-2026_18040_127 0 0 1" src="https://github.com/user-attachments/assets/bb489a8b-1c1d-4707-bce1-48a4577f76b5" />
+
+
+
 
