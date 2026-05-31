@@ -252,7 +252,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///ats_analyzer.db'
    - Skills (match job description)
    - Certifications/Awards (if relevant)
 
-**Status:** In Progress 🚧
 
 ## Screenshots
 <img width="1844" height="1024" alt="Screenshot_25-5-2026_182937_127 0 0 1" src="https://github.com/user-attachments/assets/67fad97d-a53c-4d82-a661-6ebcb903da1e" />
