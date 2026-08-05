@@ -17,7 +17,7 @@ A powerful web application that analyzes resumes and CVs against Applicant Track
 
 - **Backend**: Flask (Python)
 - **Database**: SQLite (SQLAlchemy ORM)
-- **NLP**: spaCy, NLTK, scikit-learn
+- **NLP**: Text Processing: scikit-learn (TF-IDF), regex-based keyword extraction
 - **File Parsing**: PyPDF2, python-docx
 - **Frontend**: Vanilla JavaScript with modern CSS
 - **Deployment**: can be deployed to Heroku, AWS, or any VPS
