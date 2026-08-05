@@ -1,6 +1,8 @@
 HEAD
 # ATS Filter Analyzer 🎯
 
+Built after seeing how often qualified candidates, including myself, get filtered out by ATS software before a human ever reads their resume, often over fixable issues like missing keywords or formatting the system can't parse.
+
 A powerful web application that analyzes resumes and CVs against Applicant Tracking System (ATS) filters to help candidates optimize their chances of passing automated screenings.
 
 ## ✨ Features
@@ -20,7 +22,7 @@ A powerful web application that analyzes resumes and CVs against Applicant Track
 - **NLP**: Text Processing: scikit-learn (TF-IDF), regex-based keyword extraction
 - **File Parsing**: PyPDF2, python-docx
 - **Frontend**: Vanilla JavaScript with modern CSS
-- **Deployment**: can be deployed to Heroku, AWS, or any VPS
+- **Deployment**: Configured for Render, Railway, or any Python-compatible host (via Procfile)
 
 ## 📋 Requirements
 
@@ -33,7 +35,8 @@ A powerful web application that analyzes resumes and CVs against Applicant Track
 ### 1. Clone or Download the Project
 
 ```bash
-cd ats-analyzer
+git clone https://github.com/AndiswaMbonambi08/ATS-Filter-Analyzer.git
+cd ATS-Filter-Analyzer
 ```
 
 ### 2. Create Virtual Environment
@@ -52,11 +55,6 @@ source venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
-```
-
-Download spaCy language model:
-```bash
-python -m spacy download en_core_web_sm
 ```
 
 ### 4. Initialize Database
