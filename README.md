@@ -3,8 +3,6 @@ HEAD
 
 A powerful web application that analyzes resumes and CVs against Applicant Tracking System (ATS) filters to help candidates optimize their chances of passing automated screenings.
 
-🔗 **[Live Demo](https://ats-filter-analyzer.onrender.com)**
-
 ## ✨ Features
 
 - **Resume Analysis**: Upload PDFs, DOCX, or TXT files for instant analysis
