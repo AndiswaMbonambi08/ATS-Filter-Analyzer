@@ -93,7 +93,8 @@ class ATSAnalyzer:
         
         found_terms = []
         for term in common_tech:
-            if term in self.job_description_text:
+            pattern = r'\b' + re.escape(term) + r'\b'
+            if re.search(pattern, self.job_description_text):
                 found_terms.append(term)
         
         return found_terms
@@ -108,7 +109,8 @@ class ATSAnalyzer:
         
         found_skills = []
         for skill in soft_skills_keywords:
-            if skill in self.job_description_text:
+            pattern = r'\b' + re.escape(skill) + r'\b'
+            if re.search(pattern, self.job_description_text):
                 found_skills.append(skill)
         
         return found_skills
