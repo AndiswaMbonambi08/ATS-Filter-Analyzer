@@ -542,6 +542,105 @@
         .success-message.show {
             display: block;
         }
+
+        .info-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--primary-light);
+        }
+
+        .info-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-primary);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            background: var(--primary-light);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .faq-item {
+            background: var(--primary-light);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -603,12 +702,12 @@
                     
                     <div class="form-group">
                         <label for="job-title">Job Title</label>
-                        <input type="text" id="job-title" placeholder="e.g., Senior Software Engineer">
+                        <input type="text" id="job-title">
                     </div>
                     
                     <div class="form-group">
                         <label for="job-description">Job Description</label>
-                        <textarea id="job-description" placeholder="Paste the full job description here..."></textarea>
+                        <textarea id="job-description" ></textarea>
                     </div>
                 </div>
             </div>
@@ -700,6 +799,83 @@
                 <p style="margin-top: 1rem;">Analyzing your resume...</p>
             </div>
         </div>
+
+        <div class="container">
+            <section class="info-section" id="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Upload Your Resume</h3>
+                        <p>Add your resume as a PDF, DOCX, or TXT file.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Paste the Job Description</h3>
+                        <p>Copy the full job posting so the analysis is based on that specific role, not a generic checklist.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Your ATS Score</h3>
+                        <p>See your keyword match, formatting score, and overall ATS compatibility.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Apply the Recommendations</h3>
+                        <p>Add missing keywords and fix flagged formatting issues, then re-check your score.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section" id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        What is an ATS and why does it matter?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>An Applicant Tracking System (ATS) is software many companies use to scan and filter resumes before a person ever reads them. If your resume doesn't include the right keywords or uses formatting the system can't parse, it can be filtered out automatically.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        Why do I need to paste the job description?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The tool compares your resume against that specific job posting so the keywords it checks for are actually relevant to the role, not a generic list of unrelated skills.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        What file types are supported?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>PDF, DOCX, and TXT files are supported.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        Is my resume stored or shared?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your resume is used only to generate your analysis results for this session.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        What counts as a good ATS score?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Generally, a score of 60 or above suggests your resume is likely to pass automated screening for that job, though thresholds vary by employer.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -748,6 +924,13 @@
 
         // Analyze button
         document.getElementById('analyze-btn').addEventListener('click', analyzeResume);
+
+        // FAQ accordion toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                button.parentElement.classList.toggle('open');
+            });
+        });
 
         async function analyzeResume() {
             const resumeInput = document.getElementById('resume-file');
