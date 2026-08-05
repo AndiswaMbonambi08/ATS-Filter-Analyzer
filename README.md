@@ -256,6 +256,9 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///ats_analyzer.db'
 
 
 ## Screenshots
+
+<img width="1620" height="1017" alt="image" src="https://github.com/user-attachments/assets/204ffb70-b47c-4385-b742-a03792df3e3f" />
+
 <img width="1844" height="1024" alt="Screenshot_25-5-2026_182937_127 0 0 1" src="https://github.com/user-attachments/assets/67fad97d-a53c-4d82-a661-6ebcb903da1e" />
 
 <img width="1835" height="1024" alt="Screenshot_25-5-2026_18911_127 0 0 1" src="https://github.com/user-attachments/assets/6217f383-de07-4544-86b9-4c637b0b76ed" />
